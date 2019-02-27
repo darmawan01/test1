@@ -8,16 +8,17 @@ import (
 	"strings"
 )
 
-func sorting(w string) {
-	s := strings.Split(w, "")
-	sort.Strings(s)
+func sorting(s string) {
+	text := strings.Split(s, "")
+	sort.Strings(text)
 
-	fmt.Println(strings.Join(s, ""))
+	fmt.Printf("hasil: %s", strings.Trim(strings.Join(text, ""), "\n"))
 }
 
 func main() {
 	reader := bufio.NewReader(os.Stdin)
 	fmt.Print("Enter text: ")
 	text, _ := reader.ReadString('\n')
+
 	sorting(text)
 }
